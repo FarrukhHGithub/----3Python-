@@ -63,4 +63,4 @@ def server_error(e):
     return render_template("errors/500.html", title="500 Internal Error"), 500
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=5000, debug=True)
+    app.run(host="127.0.0.1", port=5000, debug=True, use_reloader=False)
