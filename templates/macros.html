@@ -1,0 +1,39 @@
+{% macro service_card(icon, title, desc, link_text="Learn More") %}
+<div class="service-card">
+    <div class="service-icon">{{ icon }}</div>
+    <h3 class="service-title">{{ title }}</h3>
+    <p class="service-desc">{{ desc }}</p>
+    <a href="#contact" class="service-link">{{ link_text }} &rarr;</a>
+</div>
+{% endmacro %}
+
+{% macro portfolio_card(category, title, desc, icon="✨", category_key="all") %}
+<div class="portfolio-card" data-category="{{ category_key }}">
+    <div class="portfolio-img-box">
+        <span>{{ icon }}</span>
+    </div>
+    <div class="portfolio-body">
+        <div class="portfolio-tag">{{ category }}</div>
+        <h3 class="portfolio-title">{{ title }}</h3>
+        <p class="portfolio-desc">{{ desc }}</p>
+    </div>
+</div>
+{% endmacro %}
+
+{% macro stat_box(value, label) %}
+<div class="metric-item">
+    <div class="metric-value">{{ value }}</div>
+    <div class="metric-label">{{ label }}</div>
+</div>
+{% endmacro %}
+
+{% macro form_field(id, label, type="text", placeholder="") %}
+<div class="form-group">
+    <label for="{{ id }}">{{ label }}</label>
+    {% if type == "textarea" %}
+        <textarea id="{{ id }}" name="{{ id }}" class="form-textarea" placeholder="{{ placeholder }}" required></textarea>
+    {% else %}
+        <input type="{{ type }}" id="{{ id }}" name="{{ id }}" class="form-input" placeholder="{{ placeholder }}" required>
+    {% endif %}
+</div>
+{% endmacro %}

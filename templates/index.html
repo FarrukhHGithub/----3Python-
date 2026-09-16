@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% import "macros.html" as ui %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="dot"></span>
+                <span>Available for New Projects 2026</span>
+            </div>
+            <h1 class="hero-title">We craft digital experiences that <span>transform brands</span></h1>
+            <p class="hero-description">
+                Apex Studio is a full-service creative agency blending bespoke UI design, modern web architecture, and brand strategy into extraordinary digital products.
+            </p>
+            <div class="hero-actions">
+                <a href="#contact" class="btn btn-primary">Start a Project &rarr;</a>
+                <a href="#portfolio" class="btn btn-secondary">Explore Work</a>
+            </div>
+
+            <div class="metrics-bar">
+                {{ ui.stat_box("150+", "Projects Delivered") }}
+                {{ ui.stat_box("99.4%", "Client Satisfaction") }}
+                {{ ui.stat_box("14", "Design Awards") }}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="services">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">What We Do</span>
+            <h2 class="section-title">Capabilities built for <span>scale</span></h2>
+        </div>
+        <div class="services-grid">
+            {% for service in services %}
+                {{ ui.service_card(service.icon, service.title, service.desc) }}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Portfolio / Case Studies Section -->
+<section id="portfolio" class="portfolio">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Selected Work</span>
+            <h2 class="section-title">Case studies & <span>creations</span></h2>
+        </div>
+
+        <div class="portfolio-filters">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="design">UI/UX Design</button>
+            <button class="filter-btn" data-filter="web">Web Development</button>
+            <button class="filter-btn" data-filter="branding">Branding</button>
+        </div>
+
+        <div class="portfolio-grid">
+            {% for item in portfolio %}
+                {{ ui.portfolio_card(item.category, item.title, item.desc, item.icon, item.key) }}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact">
+    <div class="container">
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h3>Let's build something epic together</h3>
+                <p>Have an idea or looking to revamp your digital presence? Send us a note and we'll reply within 24 hours.</p>
+                <div class="contact-detail-item">
+                    <div class="contact-icon">📧</div>
+                    <div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">Email Us</div>
+                        <div style="font-weight: 600;">hello@apexstudio.design</div>
+                    </div>
+                </div>
+                <div class="contact-detail-item">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">Studio</div>
+                        <div style="font-weight: 600;">San Francisco, CA & Remote</div>
+                    </div>
+                </div>
+            </div>
+
+            <form class="contact-form" id="contactForm">
+                {{ ui.form_field("name", "Your Name", "text", "Jane Doe") }}
+                {{ ui.form_field("email", "Email Address", "email", "jane@company.com") }}
+                {{ ui.form_field("message", "Project Details", "textarea", "Tell us about your project scope and timeline...") }}
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message &rarr;</button>
+                <div id="formStatus" class="form-status"></div>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}
