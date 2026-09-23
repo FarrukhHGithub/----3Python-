@@ -80,6 +80,13 @@ def about():
         team=TEAM
     )
 
+@app.route("/privacy")
+def privacy():
+    return render_template(
+        "privacy.html",
+        title="Privacy Policy · Apex Studio"
+    )
+
 @app.errorhandler(404)
 def not_found(e):
     return render_template("errors/404.html", title="404 Not Found"), 404
