@@ -8,10 +8,10 @@
                 </p>
             </div>
             <ul class="footer-links">
-                <li><a href="#services" class="footer-link">Services</a></li>
-                <li><a href="#portfolio" class="footer-link">Portfolio</a></li>
-                <li><a href="#contact" class="footer-link">Contact</a></li>
-                <li><a href="#" class="footer-link">Privacy Policy</a></li>
+                <li><a href="{{ url_for('home') }}#services" class="footer-link">Services</a></li>
+                <li><a href="{{ url_for('home') }}#portfolio" class="footer-link">Portfolio</a></li>
+                <li><a href="{{ url_for('home') }}#contact" class="footer-link">Contact</a></li>
+                <li><a href="{{ url_for('privacy') }}" class="footer-link">Privacy Policy</a></li>
             </ul>
         </div>
         <div class="footer-bottom">
