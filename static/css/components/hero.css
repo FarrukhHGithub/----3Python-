@@ -11,7 +11,7 @@
     left: 20%;
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, rgba(99, 102, 241, 0.25) 0%, rgba(0, 0, 0, 0) 70%);
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(0, 0, 0, 0) 70%); /* Subtle blue */
     pointer-events: none;
     z-index: -1;
 }
@@ -22,7 +22,7 @@
     right: 10%;
     width: 450px;
     height: 450px;
-    background: radial-gradient(circle, rgba(236, 72, 153, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
+    background: radial-gradient(circle, rgba(13, 148, 136, 0.1) 0%, rgba(0, 0, 0, 0) 70%); /* Subtle teal */
     pointer-events: none;
     z-index: -1;
 }
@@ -49,9 +49,9 @@
 .hero-badge span.dot {
     width: 8px;
     height: 8px;
-    background: #10b981;
+    background: var(--accent-cyan);
     border-radius: 50%;
-    box-shadow: 0 0 10px #10b981;
+    box-shadow: 0 0 10px rgba(13, 148, 136, 0.5);
 }
 
 .hero-title {
