@@ -45,6 +45,24 @@ PORTFOLIO = [
     }
 ]
 
+TEAM = [
+    {
+        "name": "Alex Mercer",
+        "role": "Creative Director",
+        "bio": "With 10+ years in design, Alex leads our creative vision."
+    },
+    {
+        "name": "Sarah Chen",
+        "role": "Lead Engineer",
+        "bio": "Expert in modern web architecture and performance optimization."
+    },
+    {
+        "name": "Jordan Hayes",
+        "role": "Product Strategist",
+        "bio": "Bridging user needs with business goals to build products that scale."
+    }
+]
+
 @app.route("/")
 def home():
     return render_template(
@@ -52,6 +70,14 @@ def home():
         title="Apex Studio · Digital Product & Design Agency",
         services=SERVICES,
         portfolio=PORTFOLIO
+    )
+
+@app.route("/about")
+def about():
+    return render_template(
+        "about.html",
+        title="About Us · Apex Studio",
+        team=TEAM
     )
 
 @app.errorhandler(404)
