@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% import "macros.html" as ui %}
+
+{% block content %}
+<section class="about-hero" style="padding-top: 10rem; padding-bottom: 4rem;">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">About Us</span>
+            <h1 class="section-title">We are <span>Apex Studio</span></h1>
+            <p class="hero-description" style="margin-top: 1.5rem;">
+                A collective of designers, engineers, and strategists passionate about building digital products that matter.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="team" style="padding: 4rem 0;">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Meet the <span>Team</span></h2>
+        </div>
+        <div class="team-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+            {% for member in team %}
+            <div class="team-card" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 2rem; text-align: center; transition: all 0.3s ease;">
+                <div class="team-avatar" style="width: 80px; height: 80px; border-radius: 50%; background: var(--primary-gradient); display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 700; color: #fff; margin: 0 auto 1.5rem auto;">{{ member.name[0] }}</div>
+                <h3 class="team-name" style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.25rem;">{{ member.name }}</h3>
+                <div class="team-role" style="font-size: 0.9rem; color: var(--primary); font-weight: 600; margin-bottom: 1rem;">{{ member.role }}</div>
+                <p class="team-bio" style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.5;">{{ member.bio }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="values" style="padding: 4rem 0 8rem 0;">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Our <span>Values</span></h2>
+        </div>
+        <div class="services-grid">
+            {{ ui.service_card("💡", "Innovation First", "We constantly push the boundaries of what's possible in digital design.") }}
+            {{ ui.service_card("🤝", "Client Partnership", "We treat your business like our own, building long-term collaborative relationships.") }}
+            {{ ui.service_card("✨", "Craftsmanship", "Every pixel, every line of code is meticulously crafted for excellence.") }}
+        </div>
+    </div>
+</section>
+{% endblock %}
