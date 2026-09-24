@@ -63,13 +63,29 @@ TEAM = [
     }
 ]
 
+TESTIMONIALS = [
+    {
+        "content": "Apex Studio completely transformed our brand. Their attention to detail and modern aesthetic helped us secure our Series A.",
+        "author": "Elena Rodriguez",
+        "role": "CEO, FinFlow",
+        "avatar": "E"
+    },
+    {
+        "content": "Working with this team was seamless. The web app they built is incredibly fast and our users love the new UI.",
+        "author": "James Chen",
+        "role": "CTO, HealthSync",
+        "avatar": "J"
+    }
+]
+
 @app.route("/")
 def home():
     return render_template(
         "index.html",
         title="Apex Studio · Digital Product & Design Agency",
         services=SERVICES,
-        portfolio=PORTFOLIO
+        portfolio=PORTFOLIO,
+        testimonials=TESTIMONIALS
     )
 
 @app.route("/about")

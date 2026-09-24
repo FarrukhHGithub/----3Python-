@@ -68,6 +68,31 @@
     </div>
 </section>
 
+<!-- Testimonials Section -->
+<section id="testimonials" class="testimonials" style="padding: 6rem 0; background: rgba(255, 255, 255, 0.02); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Client Feedback</span>
+            <h2 class="section-title">Don't just take <span>our word</span> for it</h2>
+        </div>
+        <div class="testimonials-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            {% for item in testimonials %}
+            <div class="testimonial-card" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 2.5rem; position: relative;">
+                <div style="font-size: 3rem; color: rgba(59, 130, 246, 0.2); position: absolute; top: 1.5rem; right: 2rem; font-family: serif;">"</div>
+                <p style="font-size: 1.05rem; color: var(--text-main); line-height: 1.6; margin-bottom: 2rem; position: relative; z-index: 1;">{{ item.content }}</p>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <div style="width: 45px; height: 45px; border-radius: 50%; background: var(--primary-gradient); display: flex; align-items: center; justify-content: center; font-weight: bold; color: white;">{{ item.avatar }}</div>
+                    <div>
+                        <div style="font-weight: 700; color: var(--text-main);">{{ item.author }}</div>
+                        <div style="font-size: 0.85rem; color: var(--text-muted);">{{ item.role }}</div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
 <!-- Contact Section -->
 <section id="contact" class="contact">
     <div class="container">
